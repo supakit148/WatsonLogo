@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8" />
+<title>Watsons Neon Logo</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at center, #012 0%, #000 100%);
+    overflow: hidden;
+  }
+
+  .logo {
+    width: 520px;
+    filter:
+      drop-shadow(0 0 6px #0ff)
+      drop-shadow(0 0 14px #0ff)
+      drop-shadow(0 0 28px #0ff)
+      drop-shadow(0 0 56px rgba(0,255,255,0.8));
+    animation: neonPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes neonPulse {
+    0%, 100% {
+      filter:
+        drop-shadow(0 0 6px #0ff)
+        drop-shadow(0 0 14px #0ff)
+        drop-shadow(0 0 28px #0ff)
+        drop-shadow(0 0 56px rgba(0,255,255,0.8));
+    }
+    50% {
+      filter:
+        drop-shadow(0 0 10px #0ff)
+        drop-shadow(0 0 24px #0ff)
+        drop-shadow(0 0 48px #0ff)
+        drop-shadow(0 0 80px rgba(0,255,255,1));
+    }
+  }
+
+  /* เงาสะท้อน */
+  .reflection {
+    position: absolute;
+    bottom: -140px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transform: scaleY(-1);
+    opacity: 0.25;
+    mask-image: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255,255,255,0.7), transparent);
+  }
+
+  .reflection img {
+    width: 520px;
+    filter:
+      blur(2px)
+      drop-shadow(0 0 8px #0ff)
+      drop-shadow(0 0 20px #0ff);
+  }
+</style>
+</head>
+<body>
+  <!-- ✅ Watsons Logo แบบไม่มีกรอบ -->
+  <img class="logo" src="https://lh3.googleusercontent.com/d/1GNOOU3TAfDhwUnCplRDaJvjgicx6gcn-" alt="Watsons Logo" />
+
+  <!-- ✅ เงาสะท้อนด้านล่าง -->
+  <div class="reflection">
+    <img src="https://lh3.googleusercontent.com/d/1GNOOU3TAfDhwUnCplRDaJvjgicx6gcn-" alt="Reflection" />
+  </div>
+</body>
+</html>
